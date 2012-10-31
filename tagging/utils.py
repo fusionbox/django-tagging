@@ -113,7 +113,7 @@ def edit_string_for_tags(tags):
     use_commas = False
     for tag in tags:
         name = tag.name
-        if u',' in name:
+        if u',' in name or (u' ' in name and len(tags) == 1):
             names.append('"%s"' % name)
             continue
         elif u' ' in name:
